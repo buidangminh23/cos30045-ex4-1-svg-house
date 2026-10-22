@@ -7,31 +7,90 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- GenAI: page and SVG drawing drafted with Claude Opus 5.5, then reviewed and edited by me -->
   <header>
     <h1>Exercise 4.1: Draw SVGs</h1>
+    <nav>
+      <ul>
+        <li><a class="active" href="https://buidangminh23.github.io/cos30045-ex4-1-svg-house/">Ex 4.1 SVG House</a></li>
+        <li><a href="https://buidangminh23.github.io/cos30045-ex4-bar-chart/">Ex 4.3-4.7 Bar Chart</a></li>
+        <li><a href="https://buidangminh23.github.io/cos30045-ex5-multichart/">Ex 5 Multi-chart Page</a></li>
+        <li><a href="https://buidangminh23.github.io/cos30045-ex6-interactivity/">Ex 6 Interactivity</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
     <h2>My SVG house and garden</h2>
+    <p>The picture is drawn with SVG shapes only: <code>rect</code>, <code>circle</code>, <code>ellipse</code>, <code>line</code>, <code>polyline</code>, <code>polygon</code>, <code>path</code> and <code>text</code>. The two windows sit in one group <code>&lt;g&gt;</code>.</p>
+
     <div class="house-container">
       <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="500" height="300" fill="skyblue" />
-        <rect x="0" y="300" width="500" height="200" fill="green" />
-        <circle cx="420" cy="80" r="40" fill="yellow" />
+        <rect x="0" y="0" width="500" height="300" fill="#87ceeb" />
+        <rect x="0" y="300" width="500" height="200" fill="#5a9e3a" />
+
+        <circle cx="420" cy="80" r="40" fill="#ffd23f" stroke="#eeaa46" stroke-width="6" />
         <ellipse cx="120" cy="70" rx="50" ry="20" fill="white" />
-        <polygon points="140,200 250,110 360,200" fill="peru" />
-        <rect x="150" y="200" width="200" height="150" fill="saddlebrown" />
-        <rect x="225" y="270" width="50" height="80" fill="sienna" />
-        <circle cx="265" cy="312" r="4" fill="black" />
-        <rect x="170" y="225" width="45" height="40" fill="lightblue" />
-        <rect x="285" y="225" width="45" height="40" fill="lightblue" />
-        <path d="M 230 350 C 200 400, 280 430, 230 500" fill="none" stroke="orange" stroke-width="4" />
-        <path d="M 270 350 C 320 400, 260 430, 290 500" fill="none" stroke="orange" stroke-width="4" />
-        <polyline points="20,330 40,310 60,330 80,310 100,330" fill="none" stroke="white" stroke-width="3" />
-        <line x1="400" y1="330" x2="480" y2="330" stroke="black" stroke-width="2" />
-        <text x="30" y="40" font-size="20">My House</text>
+        <ellipse cx="160" cy="60" rx="35" ry="16" fill="white" />
+
+        <rect x="300" y="120" width="25" height="60" fill="#7d4f36" />
+
+        <polygon points="135,200 250,110 365,200" fill="#b5523b" stroke="#7d3a2a" stroke-width="3" />
+        <rect x="150" y="200" width="200" height="150" fill="#f6e3a1" stroke="#7d6747" stroke-width="3" />
+
+        <rect x="225" y="270" width="50" height="80" fill="#7d6747" />
+        <circle cx="265" cy="312" r="4" fill="#eeaa46" />
+
+        <g class="windows" transform="translate(170, 225)" fill="lightblue" stroke="#7d6747" stroke-width="3">
+          <rect x="0" y="0" width="45" height="40" />
+          <rect x="115" y="0" width="45" height="40" />
+        </g>
+
+        <path d="M 230 350 C 200 400, 280 430, 220 500 L 300 500 C 340 430, 260 400, 270 350 Z" fill="#d9c08a" stroke="#7d6747" stroke-width="2" />
+
+        <polyline points="10,330 30,310 50,330 70,310 90,330 110,310 130,330" fill="none" stroke="white" stroke-width="4" />
+
+        <rect x="430" y="240" width="16" height="90" fill="#7d4f36" />
+        <circle cx="438" cy="225" r="38" fill="#2e7d32" />
+
+        <line x1="390" y1="380" x2="390" y2="420" stroke="#2e7d32" stroke-width="3" />
+        <circle cx="390" cy="375" r="8" fill="#e84a5f" />
+        <line x1="420" y1="390" x2="420" y2="430" stroke="#2e7d32" stroke-width="3" />
+        <circle cx="420" cy="385" r="8" fill="#eeaa46" />
+
+        <text x="30" y="40" font-size="22" font-family="Arial" fill="#3d3326">Minh's House</text>
       </svg>
     </div>
+
+    <h2>Coordinate system</h2>
+    <p>The SVG origin (0, 0) is the top-left corner of the <code>viewBox</code>. x grows to the right and y grows downwards. The screenshot below labels one example of each shape with the coordinates from the code.</p>
+    <figure>
+      <img src="images/annotated-house.png" alt="Screenshot of the SVG house with arrows and labels showing the coordinates of each shape">
+      <figcaption>Annotated screenshot: each label matches the attributes in the code.</figcaption>
+    </figure>
+
+    <table>
+      <thead>
+        <tr><th>Shape</th><th>Example in the picture</th><th>Attributes that set its position and size</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>rect</td><td>House wall</td><td>x="150" y="200" width="200" height="150"</td></tr>
+        <tr><td>circle</td><td>Sun</td><td>cx="420" cy="80" r="40"</td></tr>
+        <tr><td>ellipse</td><td>Cloud</td><td>cx="120" cy="70" rx="50" ry="20"</td></tr>
+        <tr><td>polygon</td><td>Roof</td><td>points="135,200 250,110 365,200"</td></tr>
+        <tr><td>polyline</td><td>Fence</td><td>points="10,330 30,310 50,330 ..."</td></tr>
+        <tr><td>line</td><td>Flower stem</td><td>x1="390" y1="380" x2="390" y2="420"</td></tr>
+        <tr><td>path</td><td>Garden path</td><td>d="M 230 350 C 200 400, 280 430, 220 500 L 300 500 ..."</td></tr>
+        <tr><td>text</td><td>Title</td><td>x="30" y="40" (the baseline start of the text)</td></tr>
+        <tr><td>g</td><td>Two windows</td><td>transform="translate(170, 225)" moves both windows together</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Group element</h2>
+    <p>The two windows are inside <code>&lt;g class="windows" transform="translate(170, 225)"&gt;</code>. The fill and stroke are set once on the group, so both windows are styled the same. Inside the group the windows use x="0" and x="115", and the translate moves the whole group to (170, 225) on the picture.</p>
+
+    <h2>The DOM in developer tools</h2>
+    <p>In the Elements panel the <code>svg</code> element sits inside <code>div.house-container</code>, and every shape is a child element of the <code>svg</code>. The two window <code>rect</code> elements are children of the <code>g</code> element.</p>
   </main>
 
   <footer>
