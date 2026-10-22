@@ -11,6 +11,7 @@ A house and garden drawn with every SVG shape (rect, circle, ellipse, line, poly
 - `index.html` - the page and the inline SVG
 - `css/style.css` - page styles
 - `images/annotated-house.png` - annotated coordinate screenshot
+- `images/dom-devtools.png` - screenshot of the SVG in the DOM (developer tools, Elements panel)
 
 ## Run locally
 
